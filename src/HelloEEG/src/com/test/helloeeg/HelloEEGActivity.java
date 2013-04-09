@@ -2,6 +2,7 @@ package com.test.helloeeg;
 
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -32,7 +33,7 @@ public class HelloEEGActivity extends Activity {
         tv.append("Android version: " + Integer.valueOf(android.os.Build.VERSION.SDK) + "\n" );
         bluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
         if(bluetoothAdapter == null) {
-        	// Alert user that Bluetooth is not available
+        	// Alert user that Bluetooth is not available, always erro, because the JDK is not supporting the Bluetooth.
         	Toast.makeText(this, "Bluetooth not available", Toast.LENGTH_LONG).show();
         	finish();
         	return;
